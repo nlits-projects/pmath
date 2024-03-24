@@ -1,8 +1,11 @@
 ## The PNum Type
-import std/math
 import private/utils
-when defined(pmathBigInts):
+  
+when pmathBigInts:
   import bigints
+else:
+  import std/math
+
 when defined(enablePMathComplexConversion) or defined(nimdoc):
   from std/complex import Complex, complex
 
@@ -16,8 +19,12 @@ type
     # Decimal / Floats are innacurate. Fractions and roots are the main number format
     case kind*: PNumKind
     of pnkFraction:
-      n*: BiggestInt # numerator
-      d*: BiggestInt # denominator
+      when pmathBigInts:
+        n*: BigInt
+        d*: BigInt
+      else:
+        n*: BiggestInt # numerator
+        d*: BiggestInt # denominator
 
     of pnkRadical:
       negative*: bool
@@ -64,19 +71,40 @@ proc newPNum*(i: SomeFloat): PNum =
 
   let fl = BiggestFloat(i)
   let frac = decimalToFraction(fl)
-  result = PNum(kind: pnkFraction, n: frac[0], d: frac[1])
+
+  when pmathBigInts:
+    result = PNum(kind: pnkFraction, n: initBigInt(frac[0]), d: initBigInt(frac[1]))
+  else:
+    result = PNum(kind: pnkFraction, n: frac[0], d: frac[1])
+
   result.simplify()
 
 proc newPNum*(i: SomeInteger): PNum =
   ## Create new perfect number from a nim int. This is automatically converted to a integer type fraction.
-  let i = BiggestInt(i)
-  result = PNum(kind: pnkFraction, n: i, d: 1)
+  when pmathBigInts:
+    result = PNum(kind: pnkFraction, n: initBigInt(i), d: initBigInt(1))
+  else:
+    result = PNum(kind: pnkFraction, n: BiggestInt(i), d: 1)
   result.isInt = true
 
 proc newPNum*(a: SomeInteger, b: SomeInteger): PNum =
   ## Create a new fraction ``PNum`` as ``a / b``.
-  result = PNum(kind: pnkFraction, n: BiggestInt(a), d: BiggestInt(b))
+  when pmathBigInts:
+    result = PNum(kind: pnkFraction, n: initBigInt(a), d: initBigInt(b))
+  else:
+    result = PNum(kind: pnkFraction, n: BiggestInt(a), d: BiggestInt(b))
+
   result.simplify()
+
+
+when pmathBigInts or defined(nimdoc):
+  proc newPNum*(a: BigInt, b: BigInt): PNum =
+    result = PNum(kind: pnkFraction, n: a, d: b)
+    result.simplify()
+
+  proc newPNum*(a: BigInt): PNum =
+    result = PNum(kind: pnkFraction, n: a, d: initBigInt(1))
+    result.isInt = true
 
 converter toPNum*(n: SomeNumber): PNum = 
   ## Convert ``n`` to pnum
@@ -121,11 +149,17 @@ proc `$`*(p: PNum): string =
       result &= "nthRoot(" & $bse & ", " & $pn.power & ")"
 
 
+when pmathBigInts:
+  converter toBigInt*(pn: PNum): BigInt =
+    ## Convert whole number ``pn`` to BigInt
+    doAssert pn.isInt
+    return pn.n
 
-converter toInt*(pn: PNum): int =
-  ## Convert whole number ``pn`` to nim int
-  doAssert pn.isInt
-  return pn.n
+else:
+  converter toInt*(pn: PNum): int =
+    ## Convert whole number ``pn`` to nim int
+    doAssert pn.isInt
+    return pn.n
 
 converter toBiggestFloat*(pn: PNum): BiggestFloat =
   ## Convert fraction or radical to largest float
@@ -214,6 +248,7 @@ proc simplify*(pn: var PNum) =
     if gcf > 1:
       pn.n = pn.n div gcf
       pn.d = pn.d div gcf
+
 
     if pn.d < 0: # Negatives
       pn.d *= -1 # -5/-7 -> 5/7

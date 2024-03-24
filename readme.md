@@ -8,15 +8,16 @@ nimble install https://github.com/thatrandomperson5/pmath@#latest
 ```
 
 # Linktree
-* [Docs](https://example.com)
+* [Docs](https://nlits-projects.github.io/pmath/pmath)
 * [Docs (Dev Link)](https://c4de0e81-c9bb-47a1-acae-4d7ff3467f3c-00-20b3nzdqgkttd.riker.replit.dev/docs/pmath.html)
-* [Examples](https://example.com)
-* [Tests](https://example.com)
+* [Examples](https://nlits-projects.github.io/pmath/pmath#examples)
+* [Tests](https://github.com/nlits-projects/pmath/tree/main/tests)
 
 # Future Updates
 
 ## Next Bugfix (+ 0.0.1)
-* [ ] BigInt Support
+* [X] BigInt Support
+* [ ] Create BigDecimals
 ## Next Update (+ 0.1.0)
 * [ ] Start Expanded (log, abs, sin, cos, tan)
 ## Next Version (+ 1.0.0)

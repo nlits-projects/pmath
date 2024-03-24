@@ -63,6 +63,11 @@ export types
 when defined(nimdoc):
   import pmath/[templates, constants]
 
+from pmath/private/utils import pmathBigInts
+when pmathBigInts:
+  import bigints
+  import pmath/private/utils
+
 # Math ops
 
 proc `*`*(a: PNum, b: PNum): PNum =
@@ -129,7 +134,11 @@ proc `^`*(a: PNum, p: PNum): PNum =
     pow = pow * -1
 
   if pow.isInt and a.kind == pnkFraction:
-    result = newPNum(a.n ^ pow.toInt, a.d ^ pow.toInt)
+
+    when pmathBigInts:
+      result = newPNum(a.n ^ pow.toBigInt, a.d ^ pow.toBigInt)
+    else:
+      result = newPNum(a.n ^ pow.toInt, a.d ^ pow.toInt)
 
   elif a.kind == pnkRadical: # Rootmath
     #[
@@ -160,8 +169,10 @@ proc `^`*(a: PNum, p: PNum): PNum =
 proc nthRoot(a: PNum, n: PNum): PNum =
   doAssert n.kind == pnkFraction
 
-    
-  result = newRadical(a ^ newPNum(n.d), n.n) 
+  when pmathBigInts:
+    result = newRadical(a ^ newPNum(n.d), toIntC[int](n.n))
+  else:
+    result = newRadical(a ^ newPNum(n.d), n.n) 
 
   if a.isNegative and ((n.d + 1) mod 4 == 0): # i stuff
     result.setNegative(true)
