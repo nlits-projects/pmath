@@ -1,0 +1,4 @@
+nimTitle	utils	pmath/private/utils.html	module src/pmath/private/utils		0
+nim	nthRoot	pmath/private/utils.html#nthRoot,BiggestFloat,BiggestFloat	proc nthRoot(a: BiggestFloat; n: BiggestFloat): BiggestFloat		3
+nim	decimalToFraction	pmath/private/utils.html#decimalToFraction,BiggestFloat	proc decimalToFraction(d: BiggestFloat): (BiggestInt, BiggestInt)		15
+nim	simplifyRadicalFrac	pmath/private/utils.html#simplifyRadicalFrac,BiggestInt,BiggestInt,int	proc simplifyRadicalFrac(n: BiggestInt; d: BiggestInt; pow: int): (int, int)		32

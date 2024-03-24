@@ -1,0 +1,1 @@
+nimble doc --project --outdir:./docs --index:on src/pmath.nim

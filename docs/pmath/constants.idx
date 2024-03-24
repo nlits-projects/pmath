@@ -1,0 +1,4 @@
+nimTitle	constants	pmath/constants.html	module src/pmath/constants		0
+nim	pmathConstants	pmath/constants.html#pmathConstants	let pmathConstants		9
+nim	i	pmath/constants.html#i.t,PMathConstants	template i(c: PMathConstants): untyped		11
+nim	undefined	pmath/constants.html#undefined.t,PMathConstants	template undefined(c: PMathConstants): untyped		14

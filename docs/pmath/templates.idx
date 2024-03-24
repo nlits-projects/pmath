@@ -1,0 +1,6 @@
+nimTitle	templates	pmath/templates.html	module src/pmath/templates		0
+nim	`+`	pmath/templates.html#+.t,PNum,SomeNumber	template `+`(a: PNum; b: SomeNumber): untyped		6
+nim	`-`	pmath/templates.html#-.t,PNum,SomeNumber	template `-`(a: PNum; b: SomeNumber): untyped		8
+nim	`*`	pmath/templates.html#*.t,PNum,SomeNumber	template `*`(a: PNum; b: SomeNumber): untyped		10
+nim	`/`	pmath/templates.html#/.t,PNum,SomeNumber	template `/`(a: PNum; b: SomeNumber): untyped		12
+nim	`^`	pmath/templates.html#^.t,PNum,SomeNumber	template `^`(a: PNum; b: SomeNumber): untyped		14
