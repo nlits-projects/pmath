@@ -1,0 +1,21 @@
+nimTitle	utils	pmath/core/utils.html	module src/pmath/core/utils		0
+nim	pmathBigInts	pmath/core/utils.html#pmathBigInts	const pmathBigInts		11
+nim	BigIntDanger	pmath/core/utils.html#BigIntDanger	object BigIntDanger		14
+nim	nthRoot	pmath/core/utils.html#nthRoot,BiggestFloat,BiggestFloat	proc nthRoot(a: BiggestFloat; n: BiggestFloat): BiggestFloat		17
+nim	decimalToFraction	pmath/core/utils.html#decimalToFraction,BiggestFloat	proc decimalToFraction(d: BiggestFloat): (BiggestInt, BiggestInt)		29
+nim	simplifyRadicalFrac	pmath/core/utils.html#simplifyRadicalFrac,BiggestInt,BiggestInt,int	proc simplifyRadicalFrac(n: BiggestInt; d: BiggestInt; pow: int): (int, int)		46
+nim	simplifyRadicalFrac	pmath/core/utils.html#simplifyRadicalFrac,BigInt,BigInt,int	proc simplifyRadicalFrac(n: BigInt; d: BigInt; pow: int): (BigInt, BigInt)		59
+nim	`==`	pmath/core/utils.html#==.t,,	template `==`(a: (BigInt, BigInt); b: (SomeInteger, SomeInteger)): untyped		75
+nim	`==`	pmath/core/utils.html#==.t,BigInt,SomeInteger	template `==`(a: BigInt; b: SomeInteger): untyped		79
+nim	`<`	pmath/core/utils.html#<.t,BigInt,SomeInteger	template `<`(a: BigInt; b: SomeInteger): untyped		83
+nim	`<`	pmath/core/utils.html#<.t,SomeInteger,BigInt	template `<`(a: SomeInteger; b: BigInt): untyped		87
+nim	`*`	pmath/core/utils.html#*.t,BigInt,SomeInteger	template `*`(a: BigInt; b: SomeInteger): untyped		91
+nim	`*=`	pmath/core/utils.html#*=.t,BigInt,SomeInteger	template `*=`(a: var BigInt; b: SomeInteger): untyped		95
+nim	toIntC	pmath/core/utils.html#toIntC,BigInt	proc toIntC[T: SomeInteger](i: BigInt): T		100
+nim	toBiggestInt	pmath/core/utils.html#toBiggestInt.c,BigInt	converter toBiggestInt(i: BigInt): BiggestInt		111
+nim	`^`	pmath/core/utils.html#^,BigInt,T	proc `^`[T: BigInt | Natural](a: BigInt; b: T): BigInt		116
+nim	`/`	pmath/core/utils.html#/,BigInt,BigInt	proc `/`(a: BigInt; b: BigInt): BiggestFloat		125
+nimgrp	simplifyradicalfrac	pmath/core/utils.html#simplifyRadicalFrac-procs-all	proc		46
+nimgrp	<	pmath/core/utils.html#<-templates-all	template		83
+nimgrp	==	pmath/core/utils.html#==-templates-all	template		75
+heading	Flags	pmath/core/utils.html#flags	 Flags		0

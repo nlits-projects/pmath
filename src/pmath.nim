@@ -118,6 +118,7 @@ import pmath/basic
 import pmath/core/types
 
 when defined(nimdoc):
+  {.warning[UnusedImport]: off.}
   import pmath/[templates, constants, expanded]
 
 

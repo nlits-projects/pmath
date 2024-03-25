@@ -1,0 +1,23 @@
+nimTitle	basic	pmath/basic.html	module src/pmath/basic		0
+nim	`*`	pmath/basic.html#*,PNum,PNum	proc `*`(a: PNum; b: PNum): PNum		20
+nim	`/`	pmath/basic.html#/,PNum,PNum	proc `/`(a: PNum; b: PNum): PNum		41
+nim	`+`	pmath/basic.html#+,PNum,PNum	proc `+`(a: PNum; b: PNum): PNum		61
+nim	nthRoot	pmath/basic.html#nthRoot,PNum,PNum	proc nthRoot(a: PNum; n: PNum): PNum		77
+nim	`^`	pmath/basic.html#^,PNum,PNum	proc `^`(a: PNum; p: PNum): PNum		80
+nim	sqrt	pmath/basic.html#sqrt,PNum	proc sqrt(a: PNum): PNum		134
+nim	cbrt	pmath/basic.html#cbrt,PNum	proc cbrt(a: PNum): PNum		141
+nim	`-`	pmath/basic.html#-.t,PNum	template `-`(a: PNum): PNum		147
+nim	`-`	pmath/basic.html#-.t,PNum,PNum	template `-`(a, b: PNum): PNum		150
+nim	`mod`	pmath/basic.html#mod,PNum,PNum	proc `mod`(a, b: PNum): PNum		153
+nim	`==`	pmath/basic.html#==,PNum,PNum	proc `==`(a: PNum; b: PNum): bool		165
+nim	`>`	pmath/basic.html#>,PNum,PNum	proc `>`(a: PNum; b: PNum): bool		174
+nim	`<`	pmath/basic.html#<.t,PNum,PNum	template `<`(a: PNum; b: PNum): untyped		189
+nim	`>=`	pmath/basic.html#>=.t,PNum,PNum	template `>=`(a: PNum; b: PNum): untyped		192
+nim	`<=`	pmath/basic.html#<=.t,PNum,PNum	template `<=`(a: PNum; b: PNum): untyped		195
+nim	`+=`	pmath/basic.html#+=.t,PNum,PNum	template `+=`(a: var PNum; b: PNum): untyped		199
+nim	`-=`	pmath/basic.html#-=.t,PNum,PNum	template `-=`(a: var PNum; b: PNum): untyped		203
+nim	`*=`	pmath/basic.html#*=.t,PNum,PNum	template `*=`(a: var PNum; b: PNum): untyped		207
+nim	`/=`	pmath/basic.html#/=.t,PNum,PNum	template `/=`(a: var PNum; b: PNum): untyped		211
+nim	`^=`	pmath/basic.html#^=.t,PNum,PNum	template `^=`(a: var PNum; b: PNum): untyped		215
+nim	inc	pmath/basic.html#inc.t,PNum	template inc(a: var PNum): untyped		219
+nimgrp	-	pmath/basic.html#--templates-all	template		147

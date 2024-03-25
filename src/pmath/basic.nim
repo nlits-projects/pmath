@@ -8,11 +8,11 @@ import std/math
 
 
 
-from pmath/core/utils import pmathBigInts
+from core/utils import pmathBigInts
 when pmathBigInts:
   import bigints
   {.hint[DuplicateModuleImport]: off.}
-  import pmath/core/utils
+  import core/utils
   {.hint[DuplicateModuleImport]: on.}
 
 # Math ops
