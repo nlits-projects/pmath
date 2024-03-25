@@ -58,9 +58,15 @@
   isInt*: bool
   case kind*: PNumKind
   of pnkFraction:
-      n*: BiggestInt
-      d*: BiggestInt
+      when pmathBigInts:
+          n*: BigInt
+          d*: BigInt
 
+      else:
+          n*: BiggestInt
+          d*: BiggestInt
+
+    
   of pnkRadical:
       negative*: bool
       base*: PNumRef
@@ -105,7 +111,9 @@
 
 </ul>
 <ul class="simple nested-toc-section">newPNum
-  <li><a class="reference" href="#newPNum%2CSomeInteger%2CSomeInteger" title="newPNum(a: SomeInteger; b: SomeInteger): PNum">newPNum(a: SomeInteger; b: SomeInteger): PNum</a></li>
+  <li><a class="reference" href="#newPNum%2CBigInt" title="newPNum(a: BigInt): PNum">newPNum(a: BigInt): PNum</a></li>
+<li><a class="reference" href="#newPNum%2CBigInt%2CBigInt" title="newPNum(a: BigInt; b: BigInt): PNum">newPNum(a: BigInt; b: BigInt): PNum</a></li>
+<li><a class="reference" href="#newPNum%2CSomeInteger%2CSomeInteger" title="newPNum(a: SomeInteger; b: SomeInteger): PNum">newPNum(a: SomeInteger; b: SomeInteger): PNum</a></li>
 <li><a class="reference" href="#newPNum%2CSomeFloat" title="newPNum(i: SomeFloat): PNum">newPNum(i: SomeFloat): PNum</a></li>
 <li><a class="reference" href="#newPNum%2CSomeInteger" title="newPNum(i: SomeInteger): PNum">newPNum(i: SomeInteger): PNum</a></li>
 
@@ -201,9 +209,15 @@
   <span class="Identifier">isInt</span><span class="Operator">*</span><span class="Other">:</span> <span class="Identifier">bool</span>
   <span class="Keyword">case</span> <span class="Identifier">kind</span><span class="Operator">*</span><span class="Other">:</span> <a href="types.html#PNumKind"><span class="Identifier">PNumKind</span></a>
   <span class="Keyword">of</span> <span class="Identifier">pnkFraction</span><span class="Other">:</span>
-      <span class="Identifier">n</span><span class="Operator">*</span><span class="Other">:</span> <span class="Identifier">BiggestInt</span>
-      <span class="Identifier">d</span><span class="Operator">*</span><span class="Other">:</span> <span class="Identifier">BiggestInt</span>
+      <span class="Keyword">when</span> <span class="Identifier">pmathBigInts</span><span class="Other">:</span>
+          <span class="Identifier">n</span><span class="Operator">*</span><span class="Other">:</span> <span class="Identifier">BigInt</span>
+          <span class="Identifier">d</span><span class="Operator">*</span><span class="Other">:</span> <span class="Identifier">BigInt</span>
 
+      <span class="Keyword">else</span><span class="Other">:</span>
+          <span class="Identifier">n</span><span class="Operator">*</span><span class="Other">:</span> <span class="Identifier">BiggestInt</span>
+          <span class="Identifier">d</span><span class="Operator">*</span><span class="Other">:</span> <span class="Identifier">BiggestInt</span>
+
+    
   <span class="Keyword">of</span> <span class="Identifier">pnkRadical</span><span class="Other">:</span>
       <span class="Identifier">negative</span><span class="Operator">*</span><span class="Other">:</span> <span class="Identifier">bool</span>
       <span class="Identifier">base</span><span class="Operator">*</span><span class="Other">:</span> <a href="types.html#PNumRef"><span class="Identifier">PNumRef</span></a>
@@ -319,7 +333,24 @@
 
 </div>
 <div id="newPNum-procs-all">
-  <div id="newPNum,SomeInteger,SomeInteger">
+  <div id="newPNum,BigInt">
+  <dt><pre><span class="Keyword">proc</span> <a href="#newPNum%2CBigInt"><span class="Identifier">newPNum</span></a><span class="Other">(</span><span class="Identifier">a</span><span class="Other">:</span> <span class="Identifier">BigInt</span><span class="Other">)</span><span class="Other">:</span> <a href="types.html#PNum"><span class="Identifier">PNum</span></a> {.<span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">BigIntDanger</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">forbids</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
+  <dd>
+    
+    
+    
+  </dd>
+</div>
+<div id="newPNum,BigInt,BigInt">
+  <dt><pre><span class="Keyword">proc</span> <a href="#newPNum%2CBigInt%2CBigInt"><span class="Identifier">newPNum</span></a><span class="Other">(</span><span class="Identifier">a</span><span class="Other">:</span> <span class="Identifier">BigInt</span><span class="Other">;</span> <span class="Identifier">b</span><span class="Other">:</span> <span class="Identifier">BigInt</span><span class="Other">)</span><span class="Other">:</span> <a href="types.html#PNum"><span class="Identifier">PNum</span></a> {.<span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">BigIntDanger</span><span class="Other">,</span> <span class="Identifier">Exception</span><span class="Other">]</span><span class="Other">,</span>
+    <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">RootEffect</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">forbids</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
+  <dd>
+    
+    
+    
+  </dd>
+</div>
+<div id="newPNum,SomeInteger,SomeInteger">
   <dt><pre><span class="Keyword">proc</span> <a href="#newPNum%2CSomeInteger%2CSomeInteger"><span class="Identifier">newPNum</span></a><span class="Other">(</span><span class="Identifier">a</span><span class="Other">:</span> <span class="Identifier">SomeInteger</span><span class="Other">;</span> <span class="Identifier">b</span><span class="Other">:</span> <span class="Identifier">SomeInteger</span><span class="Other">)</span><span class="Other">:</span> <a href="types.html#PNum"><span class="Identifier">PNum</span></a></pre></dt>
   <dd>
     

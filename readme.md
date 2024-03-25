@@ -4,7 +4,7 @@ PMath does not use any floats, and retains the most accurate format of a given n
 
 **Install With**:
 ```bash
-nimble install https://github.com/thatrandomperson5/pmath@#latest
+nimble install https://github.com/nlits-projects/pmath@#latest
 ```
 
 # Linktree
@@ -13,17 +13,34 @@ nimble install https://github.com/thatrandomperson5/pmath@#latest
 * [Examples](https://nlits-projects.github.io/pmath/pmath#examples)
 * [Tests](https://github.com/nlits-projects/pmath/tree/main/tests)
 
+# Past Updates
+## 0.1.0
+* [X] Create PNum type
+* [X] Add Fractions
+* [X] Add Radicals
+* [X] Add basic arithmetic
+* [X] Add pow and root
+* [X] Basic type conversion
+* [X] Docs
+* [X] Other
+## 0.1.1
+* [X] BigInt Support
+* [X] License
+* [X] More Examples
+
 # Future Updates
 
-## Next Bugfix (+ 0.0.1)
-* [X] BigInt Support
-* [ ] Create BigDecimals
-## Next Update (+ 0.1.0)
+## 0.1.2
+Nothing yet
+## 0.2.0
 * [ ] Start Expanded (log, abs, sin, cos, tan)
-## Next Version (+ 1.0.0)
+* [ ] Add Optimizations (specifically minimize simplfy calls)
+## 1.0.0
 * [ ] Type Overhaul
     * [ ] Additive Groups 
     * [ ] Irrational Numbers
     * [ ] Radical Addition
     * [ ] Radical Subtraction
 * [ ] Flesh out expanded (arccos, arctan, arcsin, etc.)
+## Far Future (Or somone else can do it) 
+* [ ] Create BigDecimals/BigFloats with cross conv with BigInts

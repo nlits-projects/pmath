@@ -1,4 +1,21 @@
 nimTitle	utils	pmath/private/utils.html	module src/pmath/private/utils		0
-nim	nthRoot	pmath/private/utils.html#nthRoot,BiggestFloat,BiggestFloat	proc nthRoot(a: BiggestFloat; n: BiggestFloat): BiggestFloat		3
-nim	decimalToFraction	pmath/private/utils.html#decimalToFraction,BiggestFloat	proc decimalToFraction(d: BiggestFloat): (BiggestInt, BiggestInt)		15
-nim	simplifyRadicalFrac	pmath/private/utils.html#simplifyRadicalFrac,BiggestInt,BiggestInt,int	proc simplifyRadicalFrac(n: BiggestInt; d: BiggestInt; pow: int): (int, int)		32
+nim	pmathBigInts	pmath/private/utils.html#pmathBigInts	const pmathBigInts		11
+nim	BigIntDanger	pmath/private/utils.html#BigIntDanger	object BigIntDanger		14
+nim	nthRoot	pmath/private/utils.html#nthRoot,BiggestFloat,BiggestFloat	proc nthRoot(a: BiggestFloat; n: BiggestFloat): BiggestFloat		17
+nim	decimalToFraction	pmath/private/utils.html#decimalToFraction,BiggestFloat	proc decimalToFraction(d: BiggestFloat): (BiggestInt, BiggestInt)		29
+nim	simplifyRadicalFrac	pmath/private/utils.html#simplifyRadicalFrac,BiggestInt,BiggestInt,int	proc simplifyRadicalFrac(n: BiggestInt; d: BiggestInt; pow: int): (int, int)		46
+nim	simplifyRadicalFrac	pmath/private/utils.html#simplifyRadicalFrac,BigInt,BigInt,int	proc simplifyRadicalFrac(n: BigInt; d: BigInt; pow: int): (BigInt, BigInt)		59
+nim	`==`	pmath/private/utils.html#==.t,,	template `==`(a: (BigInt, BigInt); b: (SomeInteger, SomeInteger)): untyped		75
+nim	`==`	pmath/private/utils.html#==.t,BigInt,SomeInteger	template `==`(a: BigInt; b: SomeInteger): untyped		79
+nim	`<`	pmath/private/utils.html#<.t,BigInt,SomeInteger	template `<`(a: BigInt; b: SomeInteger): untyped		83
+nim	`<`	pmath/private/utils.html#<.t,SomeInteger,BigInt	template `<`(a: SomeInteger; b: BigInt): untyped		87
+nim	`*`	pmath/private/utils.html#*.t,BigInt,SomeInteger	template `*`(a: BigInt; b: SomeInteger): untyped		91
+nim	`*=`	pmath/private/utils.html#*=.t,BigInt,SomeInteger	template `*=`(a: var BigInt; b: SomeInteger): untyped		95
+nim	toIntC	pmath/private/utils.html#toIntC,BigInt	proc toIntC[T: SomeInteger](i: BigInt): T		100
+nim	toBiggestInt	pmath/private/utils.html#toBiggestInt.c,BigInt	converter toBiggestInt(i: BigInt): BiggestInt		111
+nim	`^`	pmath/private/utils.html#^,BigInt,T	proc `^`[T: BigInt | Natural](a: BigInt; b: T): BigInt		116
+nim	`/`	pmath/private/utils.html#/,BigInt,BigInt	proc `/`(a: BigInt; b: BigInt): BiggestFloat		125
+nimgrp	simplifyradicalfrac	pmath/private/utils.html#simplifyRadicalFrac-procs-all	proc		46
+nimgrp	<	pmath/private/utils.html#<-templates-all	template		83
+nimgrp	==	pmath/private/utils.html#==-templates-all	template		75
+heading	Flags	pmath/private/utils.html#flags	 Flags		0

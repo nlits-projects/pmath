@@ -10,7 +10,7 @@ import std/math
 
 const pmathBigInts* = defined(forcePMathBigInts) or (defined(pmathBigInts) and not defined(release)) ## To force bigints on release mode, use ``-d:forcePMathBigInts``
 
-when pmathBigInts and not defined(pmathBigIntDanger):
+when (pmathBigInts and not defined(pmathBigIntDanger)) or defined(nimdoc):
   type BigIntDanger* = object of ValueError
     ## Error realting to BigInt conversion or other fixable but not yet fixed issues
 

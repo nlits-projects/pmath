@@ -35,3 +35,28 @@ test "can big":
   let e = eBase ^ n
   let digits = newPNum(10) ^ newPNum(10) # 10 Digits
   echo BiggestFloat(e * digits) / float(digits)
+
+test "can example":
+
+  ## Leibniz’s formula
+
+  var pi = !0
+  var k = !1
+
+  for i in !!(0..(10 ^ 3)):
+
+    if i mod 2 == 0:
+      pi += !!(4 / k)
+    else:
+      pi -= !!(4 / k)
+
+    k += 2
+
+  echo pi
+
+  proc readableFloat(pn: PNum): BiggestFloat =
+    return BiggestFloat(pn * (10 ^ 8)) / BiggestFloat(10 ^ 8) 
+
+  echo readableFloat(pi * 8) # Circumference of a circle with a diameter of 8. Should ~= 25
+  
+

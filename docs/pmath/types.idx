@@ -1,27 +1,29 @@
 nimTitle	types	pmath/types.html	module src/pmath/types		0
-nim	pnkFraction	pmath/types.html#pnkFraction	PNumKind.pnkFraction		10
-nim	pnkRadical	pmath/types.html#pnkRadical	PNumKind.pnkRadical		10
-nim	PNumKind	pmath/types.html#PNumKind	enum PNumKind		10
-nim	PNumRef	pmath/types.html#PNumRef	type PNumRef		11
-nim	PNum	pmath/types.html#PNum	object PNum		12
-nim	copyToRef	pmath/types.html#copyToRef,PNum	proc copyToRef(pn: PNum): PNumRef		36
-nim	simplify	pmath/types.html#simplify,PNum	proc simplify(pn: var PNum)		39
-nim	isImaginary	pmath/types.html#isImaginary,PNum	proc isImaginary(pn: PNum): bool		42
-nim	setNegative	pmath/types.html#setNegative,PNum,bool	proc setNegative(pn: var PNum; n: bool)		45
-nim	newRadical	pmath/types.html#newRadical,PNum,int	proc newRadical(radicand: PNum; power: int; negative = false): PNum		52
-nim	newPNum	pmath/types.html#newPNum,SomeFloat	proc newPNum(i: SomeFloat): PNum		60
-nim	newPNum	pmath/types.html#newPNum,SomeInteger	proc newPNum(i: SomeInteger): PNum		70
-nim	newPNum	pmath/types.html#newPNum,SomeInteger,SomeInteger	proc newPNum(a: SomeInteger; b: SomeInteger): PNum		76
-nim	toPNum	pmath/types.html#toPNum.c,SomeNumber	converter toPNum(n: SomeNumber): PNum		81
-nim	`$`	pmath/types.html#$,PNum	proc `$`(p: PNum): string		85
-nim	toInt	pmath/types.html#toInt.c,PNum	converter toInt(pn: PNum): int		125
-nim	toBiggestFloat	pmath/types.html#toBiggestFloat.c,PNum	converter toBiggestFloat(pn: PNum): BiggestFloat		130
-nim	toComplex	pmath/types.html#toComplex.c,PNum	converter toComplex(pn: PNum): Complex[BiggestFloat]		141
-nim	toFloat	pmath/types.html#toFloat.c,PNum	converter toFloat(pn: PNum): float		148
-nim	isNegative	pmath/types.html#isNegative,PNum	proc isNegative(pn: PNum): bool		162
-nim	flip	pmath/types.html#flip,PNum	proc flip(pn: PNum): PNum		200
-nim	ensureRadical	pmath/types.html#ensureRadical,PNum	proc ensureRadical(pn: PNum): PNum		246
-nim	adjustRadical	pmath/types.html#adjustRadical,PNum,int	proc adjustRadical(pn: PNum; pow: int): PNum		254
-nim	`!`	pmath/types.html#!.t,SomeNumber	template `!`(i: SomeNumber): untyped		274
-nim	`!!`	pmath/types.html#!!.m,untyped	macro `!!`(body: untyped): untyped		286
-nimgrp	newpnum	pmath/types.html#newPNum-procs-all	proc		60
+nim	pnkFraction	pmath/types.html#pnkFraction	PNumKind.pnkFraction		16
+nim	pnkRadical	pmath/types.html#pnkRadical	PNumKind.pnkRadical		16
+nim	PNumKind	pmath/types.html#PNumKind	enum PNumKind		16
+nim	PNumRef	pmath/types.html#PNumRef	type PNumRef		17
+nim	PNum	pmath/types.html#PNum	object PNum		18
+nim	copyToRef	pmath/types.html#copyToRef,PNum	proc copyToRef(pn: PNum): PNumRef		46
+nim	simplify	pmath/types.html#simplify,PNum	proc simplify(pn: var PNum)		49
+nim	isImaginary	pmath/types.html#isImaginary,PNum	proc isImaginary(pn: PNum): bool		52
+nim	setNegative	pmath/types.html#setNegative,PNum,bool	proc setNegative(pn: var PNum; n: bool)		55
+nim	newRadical	pmath/types.html#newRadical,PNum,int	proc newRadical(radicand: PNum; power: int; negative = false): PNum		62
+nim	newPNum	pmath/types.html#newPNum,SomeFloat	proc newPNum(i: SomeFloat): PNum		70
+nim	newPNum	pmath/types.html#newPNum,SomeInteger	proc newPNum(i: SomeInteger): PNum		85
+nim	newPNum	pmath/types.html#newPNum,SomeInteger,SomeInteger	proc newPNum(a: SomeInteger; b: SomeInteger): PNum		93
+nim	newPNum	pmath/types.html#newPNum,BigInt,BigInt	proc newPNum(a: BigInt; b: BigInt): PNum		104
+nim	newPNum	pmath/types.html#newPNum,BigInt	proc newPNum(a: BigInt): PNum		108
+nim	toPNum	pmath/types.html#toPNum.c,SomeNumber	converter toPNum(n: SomeNumber): PNum		112
+nim	`$`	pmath/types.html#$,PNum	proc `$`(p: PNum): string		116
+nim	toInt	pmath/types.html#toInt.c,PNum	converter toInt(pn: PNum): int		162
+nim	toBiggestFloat	pmath/types.html#toBiggestFloat.c,PNum	converter toBiggestFloat(pn: PNum): BiggestFloat		167
+nim	toComplex	pmath/types.html#toComplex.c,PNum	converter toComplex(pn: PNum): Complex[BiggestFloat]		178
+nim	toFloat	pmath/types.html#toFloat.c,PNum	converter toFloat(pn: PNum): float		185
+nim	isNegative	pmath/types.html#isNegative,PNum	proc isNegative(pn: PNum): bool		199
+nim	flip	pmath/types.html#flip,PNum	proc flip(pn: PNum): PNum		237
+nim	ensureRadical	pmath/types.html#ensureRadical,PNum	proc ensureRadical(pn: PNum): PNum		284
+nim	adjustRadical	pmath/types.html#adjustRadical,PNum,int	proc adjustRadical(pn: PNum; pow: int): PNum		292
+nim	`!`	pmath/types.html#!.t,SomeNumber	template `!`(i: SomeNumber): untyped		312
+nim	`!!`	pmath/types.html#!!.m,untyped	macro `!!`(body: untyped): untyped		324
+nimgrp	newpnum	pmath/types.html#newPNum-procs-all	proc		70

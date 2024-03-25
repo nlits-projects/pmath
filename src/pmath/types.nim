@@ -6,6 +6,9 @@ when pmathBigInts:
 else:
   import std/math
 
+when defined(nimdoc):
+  import bigints
+
 when defined(enablePMathComplexConversion) or defined(nimdoc):
   from std/complex import Complex, complex
 
