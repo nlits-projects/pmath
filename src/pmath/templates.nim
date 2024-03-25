@@ -1,6 +1,6 @@
 ## Template aliases for pnum and nim number
 
-import types
+import core/types
 # from ../pmath import `+`, `-`, `*`, `/`, `^`
 
 template `+`*(a: PNum, b: SomeNumber): untyped {.dirty.} = a + newPNum(b)

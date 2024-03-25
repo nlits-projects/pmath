@@ -29,10 +29,11 @@ nimble install https://github.com/nlits-projects/pmath@#latest
 * [X] More Examples
 
 # Future Updates
-
+This readme is up to date with the latest github commit, not the latest release, so be careful.
 ## 0.1.2
 Nothing yet
 ## 0.2.0
+* [X] Refactor file structure
 * [ ] Start Expanded (log, abs, sin, cos, tan)
 * [ ] Add Optimizations (specifically minimize simplfy calls)
 ## 1.0.0

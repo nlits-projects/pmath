@@ -1,5 +1,5 @@
 ## The PNum Type
-import private/utils
+import utils
   
 when pmathBigInts:
   import bigints

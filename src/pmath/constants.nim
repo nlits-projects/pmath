@@ -1,6 +1,6 @@
 ## Constants, such as E, i and PI
 
-import types
+import core/types
 
 type PMathConstants = object 
   ## Representitve object for syntax

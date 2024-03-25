@@ -1,5 +1,5 @@
 import pmath
-import pmath/private/utils
+import pmath/core/utils
 
 import unittest
 
